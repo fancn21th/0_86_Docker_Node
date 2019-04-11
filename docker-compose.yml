@@ -1,0 +1,12 @@
+version: "2"
+services:
+  express_test:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    command: node app.js
+    volumes:
+      - .:/app
+      - /app/node_modules
+    ports:
+      - 80:3000
